@@ -1,0 +1,398 @@
+/* =========================================================================
+   azb-products.css — стили карточек товаров «Азбука покрытий» для Tilda
+   ---------------------------------------------------------------------------
+   Подключение:
+     1. Загрузить файл в Tilda → Настройки сайта → Загруженные файлы.
+     2. В «Настройки сайта → Ещё → Изменить HTML-код в HEAD» добавить:
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="ССЫЛКА_НА_ЭТОТ_ФАЙЛ">
+     3. HTML карточки оборачивается в <div class="azb-product-card">…</div>
+        (см. tilda/snippets/*.html).
+
+   Изоляция:
+     • Все правила scope’ятся через .azb-product-card — не задевают Tilda.
+     • Все классы с префиксом azb- и переменные --azb-* — не пересекаются
+       с тильдовскими .t-* и :root-токенами.
+     • Reset (box-sizing/margin/padding) применяется ТОЛЬКО внутри scope.
+   ========================================================================= */
+
+/* ── Scope + reset ──────────────────────────────────────────────────────── */
+.azb-product-card,
+.azb-product-card *,
+.azb-product-card *::before,
+.azb-product-card *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.azb-product-card {
+  /* Tokens — живут на корне scope, в глобальный :root не утекают */
+  --azb-bg: #f6f5f1;
+  --azb-bg-elev: #ffffff;
+  --azb-bg-alt: #efece4;
+  --azb-ink: #0a0a0a;
+  --azb-ink-2: #2a2a2a;
+  --azb-ink-3: #5a5a5a;
+  --azb-ink-4: #9a9a9a;
+  --azb-line: #dcd9d0;
+  --azb-line-2: #eae7df;
+  --azb-brand: #1742d1;
+  --azb-accent: #ff4d00;
+  --azb-radius-sm: 6px;
+  --azb-radius-md: 12px;
+  --azb-radius-lg: 20px;
+  --azb-font: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --azb-mono-font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Базовая типографика scope’а */
+  font-family: var(--azb-font);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--azb-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Гарантируем шрифт у всех потомков (Tilda задаёт свой через .t-* — перебиваем) */
+.azb-product-card,
+.azb-product-card h1,
+.azb-product-card h2,
+.azb-product-card h3,
+.azb-product-card h4,
+.azb-product-card h5,
+.azb-product-card h6,
+.azb-product-card p,
+.azb-product-card span,
+.azb-product-card a,
+.azb-product-card div,
+.azb-product-card td,
+.azb-product-card th,
+.azb-product-card dt,
+.azb-product-card dd,
+.azb-product-card button,
+.azb-product-card input,
+.azb-product-card textarea,
+.azb-product-card select {
+  font-family: var(--azb-font);
+}
+
+.azb-product-card .azb-mono,
+.azb-product-card .azb-prod__eyebrow,
+.azb-product-card .azb-badge-tl,
+.azb-product-card .azb-pill,
+.azb-product-card .azb-more,
+.azb-product-card .azb-prod__pricing-head .azb-note,
+.azb-product-card .azb-price-table th,
+.azb-product-card .azb-price-table td,
+.azb-product-card .azb-prod__specs dt {
+  font-family: var(--azb-mono-font);
+}
+
+/* Тильдовские .t-* картинки бывают block; явно фиксируем */
+.azb-product-card img {
+  max-width: 100%;
+  display: block;
+}
+
+.azb-product-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.azb-product-card button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ── Кнопки ─────────────────────────────────────────────────────────────── */
+.azb-product-card .azb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+.azb-product-card .azb-btn:active { transform: translateY(1px); }
+.azb-product-card .azb-btn--primary { background: var(--azb-ink); color: var(--azb-bg); }
+.azb-product-card .azb-btn--primary:hover { background: var(--azb-brand); }
+.azb-product-card .azb-btn--accent { background: var(--azb-accent); color: #fff; }
+.azb-product-card .azb-btn--accent:hover { filter: brightness(1.08); }
+.azb-product-card .azb-btn--ghost {
+  border-color: var(--azb-line);
+  color: var(--azb-ink);
+}
+.azb-product-card .azb-btn--ghost:hover {
+  border-color: var(--azb-ink);
+  background: var(--azb-bg-elev);
+}
+.azb-product-card .azb-btn--sm {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 13px;
+}
+.azb-product-card .azb-btn .azb-arrow { transition: transform 0.2s; }
+.azb-product-card .azb-btn:hover .azb-arrow { transform: translateX(3px); }
+
+/* ── Каркас карточки ────────────────────────────────────────────────────── */
+.azb-product-card .azb-prod {
+  background: var(--azb-bg-elev);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-lg);
+  overflow: hidden;
+}
+
+.azb-product-card .azb-prod__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--azb-line);
+}
+
+.azb-product-card .azb-prod__media {
+  position: relative;
+  aspect-ratio: 5 / 3;
+  background: var(--azb-ink);
+  overflow: hidden;
+}
+
+.azb-product-card .azb-prod__media .azb-badge-tl {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  font-size: 11px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(6px);
+}
+
+.azb-product-card .azb-prod__media .azb-badge-tl--accent {
+  background: var(--azb-accent);
+}
+
+.azb-product-card .azb-prod__media .azb-colorchip-bar {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.azb-product-card .azb-colorchip {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.azb-product-card .azb-more {
+  margin-left: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Stripe-плейсхолдер для карточек без фото */
+.azb-product-card .azb-stripe-ph {
+  position: absolute;
+  inset: 0;
+}
+.azb-product-card .azb-stripe-ph::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* Картинка media на всю площадь */
+.azb-product-card .azb-prod__media > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Инфо-блок ──────────────────────────────────────────────────────────── */
+.azb-product-card .azb-prod__info {
+  padding: 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+}
+
+.azb-product-card .azb-prod__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--azb-ink-4);
+}
+
+.azb-product-card .azb-pill {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--azb-line-2);
+  color: var(--azb-ink-2);
+  font-size: 11px;
+}
+
+.azb-product-card .azb-pill--invert {
+  background: var(--azb-ink);
+  color: var(--azb-bg);
+}
+
+.azb-product-card .azb-prod__title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.azb-product-card .azb-prod__desc {
+  color: var(--azb-ink-2);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 42ch;
+}
+
+.azb-product-card .azb-prod__specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 24px;
+  margin-top: 4px;
+}
+
+.azb-product-card .azb-prod__specs dt {
+  font-size: 12px;
+  color: var(--azb-ink-3);
+  padding-top: 6px;
+  border-top: 1px solid var(--azb-line-2);
+}
+
+.azb-product-card .azb-prod__specs dd {
+  font-size: 14px;
+  color: var(--azb-ink);
+  padding-bottom: 10px;
+}
+
+.azb-product-card .azb-prod__cta-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Прайс-таблица ──────────────────────────────────────────────────────── */
+.azb-product-card .azb-prod__pricing {
+  padding: 28px 36px 36px;
+}
+
+.azb-product-card .azb-prod__pricing-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.azb-product-card .azb-prod__pricing-head h4 {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.azb-product-card .azb-prod__pricing-head .azb-note {
+  font-size: 11px;
+  color: var(--azb-ink-3);
+}
+
+.azb-product-card .azb-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.azb-product-card .azb-price-table th,
+.azb-product-card .azb-price-table td {
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--azb-line-2);
+}
+
+.azb-product-card .azb-price-table th {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--azb-ink-3);
+  font-weight: 500;
+  background: var(--azb-bg-alt);
+  border-bottom: 1px solid var(--azb-line);
+}
+
+.azb-product-card .azb-price-table th:first-child,
+.azb-product-card .azb-price-table td:first-child {
+  padding-left: 24px;
+}
+
+.azb-product-card .azb-price-table td {
+  color: var(--azb-ink);
+}
+
+.azb-product-card .azb-price-table td:first-child {
+  font-family: var(--azb-font);
+  font-weight: 500;
+  color: var(--azb-ink);
+  font-size: 14px;
+}
+
+.azb-product-card .azb-price-table td.azb-deal {
+  color: var(--azb-ink-3);
+  font-style: italic;
+}
+
+.azb-product-card .azb-price-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.azb-product-card .azb-price-table tr:hover td {
+  background: var(--azb-bg-alt);
+}
+
+/* ── Адаптив ────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .azb-product-card .azb-prod__head { grid-template-columns: 1fr; }
+  .azb-product-card .azb-prod__media { aspect-ratio: 3 / 2; }
+  .azb-product-card .azb-prod__info { padding: 24px; }
+  .azb-product-card .azb-prod__pricing { padding: 20px; }
+  .azb-product-card .azb-price-table th,
+  .azb-product-card .azb-price-table td {
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+  .azb-product-card .azb-price-table th:first-child,
+  .azb-product-card .azb-price-table td:first-child {
+    padding-left: 12px;
+  }
+  .azb-product-card .azb-prod__desc { max-width: none; }
+}
