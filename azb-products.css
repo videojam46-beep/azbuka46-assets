@@ -228,13 +228,17 @@
   background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
-/* Картинка media на всю площадь */
-.azb-product-card .azb-prod__media > img {
+/* Картинка media на всю площадь — селектор без `>` на случай,
+   если Tilda оборачивает <img> в <picture>/<a>/обёрточный <div>. */
+.azb-product-card .azb-prod__media img,
+.azb-product-card .azb-prod__media picture {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  max-width: none;
 }
 
 /* ── Инфо-блок ──────────────────────────────────────────────────────────── */
