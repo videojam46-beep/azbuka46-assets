@@ -34,8 +34,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 40px 20px;
 
   /* Tokens — живут на корне scope, в глобальный :root не утекают */
   --azb-bg: #f6f5f1;
