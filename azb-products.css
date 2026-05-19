@@ -472,9 +472,9 @@
 }
 
 .azb-block .azb-app-card__num,
-.azb-block .azb-adv__num {
-  font-size: 12px;
-  color: var(--azb-ink-4);
+.azb-block .azb-adv__num,
+.azb-block .azb-included-item__num {
+  display: none;
 }
 
 .azb-block .azb-app-card__title,
