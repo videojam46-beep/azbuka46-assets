@@ -19,16 +19,16 @@
    ========================================================================= */
 
 /* ── Scope + reset ──────────────────────────────────────────────────────── */
-.azb-product-card,
-.azb-product-card *,
-.azb-product-card *::before,
-.azb-product-card *::after {
+.azb-product-card, .azb-block,
+.azb-product-card *, .azb-block *,
+.azb-product-card *::before, .azb-block *::before,
+.azb-product-card *::after, .azb-block *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.azb-product-card {
+.azb-product-card, .azb-block {
   /* Ограничение ширины — карточка не растягивается, даже если блок T123
      в Tilda настроен на контейнер 100%. Совпадает с тильдовским стандартом. */
   max-width: 1200px;
@@ -65,25 +65,8 @@
 }
 
 /* Гарантируем шрифт у всех потомков (Tilda задаёт свой через .t-* — перебиваем) */
-.azb-product-card,
-.azb-product-card h1,
-.azb-product-card h2,
-.azb-product-card h3,
-.azb-product-card h4,
-.azb-product-card h5,
-.azb-product-card h6,
-.azb-product-card p,
-.azb-product-card span,
-.azb-product-card a,
-.azb-product-card div,
-.azb-product-card td,
-.azb-product-card th,
-.azb-product-card dt,
-.azb-product-card dd,
-.azb-product-card button,
-.azb-product-card input,
-.azb-product-card textarea,
-.azb-product-card select {
+.azb-product-card, .azb-block,
+.azb-product-card *, .azb-block * {
   font-family: var(--azb-font);
 }
 
@@ -95,22 +78,28 @@
 .azb-product-card .azb-prod__pricing-head .azb-note,
 .azb-product-card .azb-price-table th,
 .azb-product-card .azb-price-table td,
-.azb-product-card .azb-prod__specs dt {
+.azb-product-card .azb-prod__specs dt,
+.azb-block .azb-mono,
+.azb-block .azb-eyebrow,
+.azb-block .azb-app-card__num,
+.azb-block .azb-adv__num,
+.azb-block .azb-included-item__num,
+.azb-block .azb-specs-table td:last-child {
   font-family: var(--azb-mono-font);
 }
 
 /* Тильдовские .t-* картинки бывают block; явно фиксируем */
-.azb-product-card img {
+.azb-product-card img, .azb-block img {
   max-width: 100%;
   display: block;
 }
 
-.azb-product-card a {
+.azb-product-card a, .azb-block a {
   color: inherit;
   text-decoration: none;
 }
 
-.azb-product-card button {
+.azb-product-card button, .azb-block button {
   font: inherit;
   color: inherit;
   background: none;
@@ -407,4 +396,264 @@
     padding-left: 12px;
   }
   .azb-product-card .azb-prod__desc { max-width: none; }
+}
+
+/* =========================================================================
+   Section blocks — общая обёртка .azb-block
+   ========================================================================= */
+
+/* ── Общий заголовок секции (eyebrow + h2/h3 + текст справа) ──────────────── */
+.azb-block .azb-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--azb-ink-3);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.azb-block .azb-h2 {
+  font-weight: 600;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.azb-block .azb-h3 {
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.azb-block .azb-sec-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.azb-block .azb-sec-head__aside {
+  color: var(--azb-ink-3);
+  max-width: 46ch;
+  line-height: 1.55;
+  font-size: 16px;
+}
+
+@media (max-width: 760px) {
+  .azb-block .azb-sec-head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ── Apps + Advs (одинаковая сетка 3×, плитки с белым фоном) ──────────────── */
+.azb-block .azb-apps,
+.azb-block .azb-advs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--azb-line);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-md);
+  overflow: hidden;
+}
+
+.azb-block .azb-app-card,
+.azb-block .azb-adv {
+  background: var(--azb-bg-elev);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+}
+
+.azb-block .azb-app-card__num,
+.azb-block .azb-adv__num {
+  font-size: 12px;
+  color: var(--azb-ink-4);
+}
+
+.azb-block .azb-app-card__title,
+.azb-block .azb-adv__title {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.azb-block .azb-app-card__desc,
+.azb-block .azb-adv__desc {
+  color: var(--azb-ink-3);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .azb-block .azb-apps,
+  .azb-block .azb-advs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Specs table (технические характеристики) ─────────────────────────────── */
+.azb-block .azb-specs-block {
+  background: var(--azb-bg-elev);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-lg);
+  overflow: hidden;
+}
+
+.azb-block .azb-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.azb-block .azb-specs-table tr {
+  border-bottom: 1px solid var(--azb-line-2);
+}
+
+.azb-block .azb-specs-table tr:last-child {
+  border-bottom: 0;
+}
+
+.azb-block .azb-specs-table td {
+  padding: 18px 28px;
+  font-size: 15px;
+}
+
+.azb-block .azb-specs-table td:first-child {
+  color: var(--azb-ink-3);
+  width: 55%;
+}
+
+.azb-block .azb-specs-table td:last-child {
+  color: var(--azb-ink);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .azb-block .azb-specs-table td {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
+
+/* ── Bases + Colors (две колонки с белыми картами) ────────────────────────── */
+.azb-block .azb-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.azb-block .azb-col-card {
+  background: var(--azb-bg-elev);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-lg);
+  padding: 32px;
+}
+
+.azb-block .azb-col-card .azb-h3 {
+  margin-bottom: 18px;
+}
+
+.azb-block .azb-col-card p {
+  color: var(--azb-ink-3);
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.azb-block .azb-bases-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.azb-block .azb-base-tag {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--azb-bg-alt);
+  font-size: 14px;
+  color: var(--azb-ink-2);
+}
+
+.azb-block .azb-colors-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.azb-block .azb-color-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 6px;
+  border-radius: 999px;
+  background: var(--azb-bg-alt);
+  font-size: 13px;
+}
+
+.azb-block .azb-color-pill .azb-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .azb-block .azb-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Included (что входит в монтаж) ───────────────────────────────────────── */
+.azb-block .azb-included {
+  background: var(--azb-bg-elev);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-lg);
+  padding: 36px;
+}
+
+.azb-block .azb-included .azb-sec-head {
+  margin-bottom: 0;
+}
+
+.azb-block .azb-included-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.azb-block .azb-included-item {
+  padding: 18px;
+  border: 1px solid var(--azb-line-2);
+  border-radius: var(--azb-radius-sm);
+  background: var(--azb-bg-alt);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.azb-block .azb-included-item__num {
+  font-size: 11px;
+  color: var(--azb-ink-4);
+}
+
+.azb-block .azb-included-item__title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+@media (max-width: 860px) {
+  .azb-block .azb-included-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .azb-block .azb-included {
+    padding: 24px;
+  }
 }
