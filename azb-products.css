@@ -520,24 +520,30 @@
 }
 
 .azb-block .azb-specs-table td {
-  padding: 18px 28px;
-  font-size: 15px;
+  padding: 10px 24px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .azb-block .azb-specs-table td:first-child {
   color: var(--azb-ink-3);
-  width: 55%;
+  width: 60%;
+  font-size: 13px;
 }
 
 .azb-block .azb-specs-table td:last-child {
   color: var(--azb-ink);
   font-weight: 500;
+  text-align: right;
 }
 
 @media (max-width: 600px) {
   .azb-block .azb-specs-table td {
-    padding: 12px 16px;
+    padding: 8px 14px;
     font-size: 13px;
+  }
+  .azb-block .azb-specs-table td:first-child {
+    font-size: 12px;
   }
 }
 
