@@ -464,11 +464,11 @@
 .azb-block .azb-app-card,
 .azb-block .azb-adv {
   background: var(--azb-bg-elev);
-  padding: 32px 24px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  min-height: 200px;
+  gap: 6px;
+  min-height: 0;
 }
 
 .azb-block .azb-app-card__num,
@@ -479,7 +479,7 @@
 
 .azb-block .azb-app-card__title,
 .azb-block .azb-adv__title {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.015em;
 }
@@ -487,8 +487,8 @@
 .azb-block .azb-app-card__desc,
 .azb-block .azb-adv__desc {
   color: var(--azb-ink-3);
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 @media (max-width: 760px) {
