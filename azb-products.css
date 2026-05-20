@@ -49,7 +49,8 @@
   --azb-line-2: #eae7df;
   --azb-brand: #1742d1;
   --azb-accent: #ff4d00;
-  --azb-red: #dc2433;
+  /* Совпадает 1-в-1 с тильдовским связанным стилем «Красная» (ji5FoIgrl) */
+  --azb-red: #cc2233;
   --azb-red-hover: #b71d2b;
   --azb-radius-sm: 6px;
   --azb-radius-md: 12px;
@@ -116,14 +117,15 @@
   gap: 10px;
   height: 50px;
   padding: 0 28px;
-  border-radius: 999px;
+  /* Совпадает с тильдовским связанным стилем «Красная» — 30px, не 999px */
+  border-radius: 30px;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease-in-out;
   border: 1px solid transparent;
 }
 .azb-product-card .azb-btn:active { transform: translateY(1px); }
@@ -147,11 +149,12 @@
   text-shadow: none !important;
   opacity: 1 !important;
 }
+/* Hover как у тильдовского связанного стиля — тень, а не смена цвета */
 .azb-product-card a.azb-btn--primary:hover,
 .azb-product-card a.azb-btn--accent:hover,
 .azb-product-card .azb-btn--primary:hover,
 .azb-product-card .azb-btn--accent:hover {
-  background: var(--azb-red-hover) !important;
+  box-shadow: 0 2px 3px rgba(0, 11, 48, 0.25);
 }
 /* Внутренний текст (если завернут в <span>) тоже белый */
 .azb-product-card .azb-btn--primary *,
