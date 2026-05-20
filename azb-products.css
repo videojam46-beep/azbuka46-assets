@@ -127,32 +127,32 @@
   border: 1px solid transparent;
 }
 .azb-product-card .azb-btn:active { transform: translateY(1px); }
-/* Залитые красные кнопки — как тильдовский CTA. `a.azb-btn--…` поднимает
-   специфичность, чтобы тильдовский `a { color }` не пробивал. */
+/* Залитые красные кнопки — как тильдовский CTA. `!important` гасит тильдовский
+   `a { color }`, который пытается пробить наш цвет текста. */
 .azb-product-card a.azb-btn--primary,
 .azb-product-card a.azb-btn--accent,
 .azb-product-card .azb-btn--primary,
 .azb-product-card .azb-btn--accent {
-  background: var(--azb-red);
-  color: #fff;
+  background: var(--azb-red) !important;
+  color: #fff !important;
 }
 .azb-product-card a.azb-btn--primary:hover,
 .azb-product-card a.azb-btn--accent:hover,
 .azb-product-card .azb-btn--primary:hover,
 .azb-product-card .azb-btn--accent:hover {
-  background: var(--azb-red-hover);
+  background: var(--azb-red-hover) !important;
 }
-/* Призрак — обводка, цвет ink. Тоже бустим специфичность. */
+/* Призрак — обводка, цвет ink. Тоже с !important. */
 .azb-product-card a.azb-btn--ghost,
 .azb-product-card .azb-btn--ghost {
   border-color: var(--azb-line);
-  color: var(--azb-ink);
-  background: transparent;
+  color: var(--azb-ink) !important;
+  background: transparent !important;
 }
 .azb-product-card a.azb-btn--ghost:hover,
 .azb-product-card .azb-btn--ghost:hover {
   border-color: var(--azb-ink);
-  background: var(--azb-bg-elev);
+  background: var(--azb-bg-elev) !important;
 }
 .azb-product-card .azb-btn--sm {
   height: 44px;
