@@ -265,8 +265,8 @@
 .azb-product-card .azb-prod__title {
   font-size: 32px;
   font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 .azb-product-card .azb-prod__desc {
@@ -415,16 +415,16 @@
 .azb-block .azb-h2 {
   font-weight: 600;
   font-size: clamp(28px, 3.2vw, 44px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
 .azb-block .azb-h3 {
   font-weight: 600;
   font-size: 22px;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
 }
 
 .azb-block .azb-sec-head {
