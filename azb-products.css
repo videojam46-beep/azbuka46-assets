@@ -127,14 +127,25 @@
   border: 1px solid transparent;
 }
 .azb-product-card .azb-btn:active { transform: translateY(1px); }
-/* Залитые красные кнопки — как тильдовский CTA. `!important` гасит тильдовский
-   `a { color }`, который пытается пробить наш цвет текста. */
+/* Залитые красные кнопки — как тильдовский CTA. `!important` + все состояния
+   ссылок (:visited, :hover, :focus, :active) + дочерние элементы, чтобы
+   тильдовские правила (`a:visited{color}`, span внутри и т.п.) не пробивали. */
 .azb-product-card a.azb-btn--primary,
+.azb-product-card a.azb-btn--primary:visited,
+.azb-product-card a.azb-btn--primary:hover,
+.azb-product-card a.azb-btn--primary:focus,
+.azb-product-card a.azb-btn--primary:active,
 .azb-product-card a.azb-btn--accent,
+.azb-product-card a.azb-btn--accent:visited,
+.azb-product-card a.azb-btn--accent:hover,
+.azb-product-card a.azb-btn--accent:focus,
+.azb-product-card a.azb-btn--accent:active,
 .azb-product-card .azb-btn--primary,
 .azb-product-card .azb-btn--accent {
   background: var(--azb-red) !important;
   color: #fff !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
 }
 .azb-product-card a.azb-btn--primary:hover,
 .azb-product-card a.azb-btn--accent:hover,
@@ -142,17 +153,32 @@
 .azb-product-card .azb-btn--accent:hover {
   background: var(--azb-red-hover) !important;
 }
-/* Призрак — обводка, цвет ink. Тоже с !important. */
+/* Внутренний текст (если завернут в <span>) тоже белый */
+.azb-product-card .azb-btn--primary *,
+.azb-product-card .azb-btn--accent * {
+  color: #fff !important;
+}
+
+/* Призрак — обводка, цвет ink. Все состояния. */
 .azb-product-card a.azb-btn--ghost,
+.azb-product-card a.azb-btn--ghost:visited,
+.azb-product-card a.azb-btn--ghost:hover,
+.azb-product-card a.azb-btn--ghost:focus,
+.azb-product-card a.azb-btn--ghost:active,
 .azb-product-card .azb-btn--ghost {
   border-color: var(--azb-line);
   color: var(--azb-ink) !important;
   background: transparent !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
 }
 .azb-product-card a.azb-btn--ghost:hover,
 .azb-product-card .azb-btn--ghost:hover {
   border-color: var(--azb-ink);
   background: var(--azb-bg-elev) !important;
+}
+.azb-product-card .azb-btn--ghost * {
+  color: var(--azb-ink) !important;
 }
 .azb-product-card .azb-btn--sm {
   height: 44px;
