@@ -49,6 +49,8 @@
   --azb-line-2: #eae7df;
   --azb-brand: #1742d1;
   --azb-accent: #ff4d00;
+  --azb-red: #dc2433;
+  --azb-red-hover: #b71d2b;
   --azb-radius-sm: 6px;
   --azb-radius-md: 12px;
   --azb-radius-lg: 20px;
@@ -113,32 +115,50 @@
   align-items: center;
   gap: 10px;
   height: 50px;
-  padding: 0 24px;
+  padding: 0 28px;
   border-radius: 999px;
   font-weight: 500;
-  font-size: 15px;
-  letter-spacing: -0.005em;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
   white-space: nowrap;
   transition: all 0.2s ease;
   border: 1px solid transparent;
 }
 .azb-product-card .azb-btn:active { transform: translateY(1px); }
-.azb-product-card .azb-btn--primary { background: var(--azb-ink); color: var(--azb-bg); }
-.azb-product-card .azb-btn--primary:hover { background: var(--azb-brand); }
-.azb-product-card .azb-btn--accent { background: var(--azb-accent); color: #fff; }
-.azb-product-card .azb-btn--accent:hover { filter: brightness(1.08); }
+/* Залитые красные кнопки — как тильдовский CTA. `a.azb-btn--…` поднимает
+   специфичность, чтобы тильдовский `a { color }` не пробивал. */
+.azb-product-card a.azb-btn--primary,
+.azb-product-card a.azb-btn--accent,
+.azb-product-card .azb-btn--primary,
+.azb-product-card .azb-btn--accent {
+  background: var(--azb-red);
+  color: #fff;
+}
+.azb-product-card a.azb-btn--primary:hover,
+.azb-product-card a.azb-btn--accent:hover,
+.azb-product-card .azb-btn--primary:hover,
+.azb-product-card .azb-btn--accent:hover {
+  background: var(--azb-red-hover);
+}
+/* Призрак — обводка, цвет ink. Тоже бустим специфичность. */
+.azb-product-card a.azb-btn--ghost,
 .azb-product-card .azb-btn--ghost {
   border-color: var(--azb-line);
   color: var(--azb-ink);
+  background: transparent;
 }
+.azb-product-card a.azb-btn--ghost:hover,
 .azb-product-card .azb-btn--ghost:hover {
   border-color: var(--azb-ink);
   background: var(--azb-bg-elev);
 }
 .azb-product-card .azb-btn--sm {
-  height: 40px;
-  padding: 0 18px;
-  font-size: 13px;
+  height: 44px;
+  padding: 0 22px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
 }
 .azb-product-card .azb-btn .azb-arrow { transition: transform 0.2s; }
 .azb-product-card .azb-btn:hover .azb-arrow { transform: translateX(3px); }
