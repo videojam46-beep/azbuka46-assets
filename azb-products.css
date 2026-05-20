@@ -281,10 +281,10 @@
 
 /* ── Инфо-блок ──────────────────────────────────────────────────────────── */
 .azb-product-card .azb-prod__info {
-  padding: 36px 36px;
+  padding: 32px 36px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   justify-content: center;
 }
 
@@ -321,7 +321,7 @@
 .azb-product-card .azb-prod__desc {
   color: var(--azb-ink-2);
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.45;
   max-width: 42ch;
 }
 
@@ -335,14 +335,14 @@
 .azb-product-card .azb-prod__specs dt {
   font-size: 12px;
   color: var(--azb-ink-3);
-  padding-top: 6px;
+  padding-top: 5px;
   border-top: 1px solid var(--azb-line-2);
 }
 
 .azb-product-card .azb-prod__specs dd {
   font-size: 14px;
   color: var(--azb-ink);
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 }
 
 .azb-product-card .azb-prod__cta-row {
@@ -354,14 +354,14 @@
 
 /* ── Прайс-таблица ──────────────────────────────────────────────────────── */
 .azb-product-card .azb-prod__pricing {
-  padding: 28px 36px 36px;
+  padding: 22px 32px 28px;
 }
 
 .azb-product-card .azb-prod__pricing-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -386,7 +386,7 @@
 .azb-product-card .azb-price-table th,
 .azb-product-card .azb-price-table td {
   text-align: left;
-  padding: 14px 16px;
+  padding: 9px 14px;
   border-bottom: 1px solid var(--azb-line-2);
 }
 
@@ -433,18 +433,32 @@
 @media (max-width: 860px) {
   .azb-product-card .azb-prod__head { grid-template-columns: 1fr; }
   .azb-product-card .azb-prod__media { aspect-ratio: 3 / 2; }
-  .azb-product-card .azb-prod__info { padding: 24px; }
-  .azb-product-card .azb-prod__pricing { padding: 20px; }
+  .azb-product-card .azb-prod__info {
+    padding: 22px;
+    gap: 12px;
+  }
+  .azb-product-card .azb-prod__pricing { padding: 18px 18px 22px; }
+  /* Прайс-таблица на мобиле: не переносим значения «2 000», «100–300 м²» и т.п. */
   .azb-product-card .azb-price-table th,
   .azb-product-card .azb-price-table td {
-    padding: 10px 8px;
-    font-size: 13px;
+    padding: 8px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .azb-product-card .azb-price-table th {
+    font-size: 10px;
   }
   .azb-product-card .azb-price-table th:first-child,
   .azb-product-card .azb-price-table td:first-child {
-    padding-left: 12px;
+    padding-left: 14px;
   }
-  .azb-product-card .azb-prod__desc { max-width: none; }
+  .azb-product-card .azb-prod__desc {
+    max-width: none;
+    /* Плотнее межстрочное расстояние на мобиле */
+    line-height: 1.3;
+  }
+  /* Specs тоже плотнее */
+  .azb-product-card .azb-prod__specs dd { padding-bottom: 6px; }
 }
 
 /* =========================================================================
