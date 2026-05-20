@@ -437,20 +437,39 @@
     padding: 22px;
     gap: 12px;
   }
-  .azb-product-card .azb-prod__pricing { padding: 18px 18px 22px; }
-  /* Прайс-таблица на мобиле: не переносим значения «2 000», «100–300 м²» и т.п. */
+  .azb-product-card .azb-prod__pricing { padding: 18px 14px 22px; }
+  /* Прайс-таблица на мобиле: цифры не переносим, заголовки колонок можно. */
+  .azb-product-card .azb-price-table {
+    table-layout: fixed;
+    width: 100%;
+  }
   .azb-product-card .azb-price-table th,
   .azb-product-card .azb-price-table td {
-    padding: 8px 10px;
-    font-size: 12px;
-    white-space: nowrap;
+    padding: 7px 4px;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
   }
   .azb-product-card .azb-price-table th {
-    font-size: 10px;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    white-space: normal;        /* «100–300 м²» может переноситься в заголовке */
+    word-break: keep-all;
+  }
+  .azb-product-card .azb-price-table td {
+    white-space: nowrap;        /* «2 000», «договорная» — на одной строке */
+    font-size: 12px;
+  }
+  .azb-product-card .azb-price-table td.azb-deal {
+    font-size: 10px;            /* «договорная» помельче, чтобы влезла в узкую колонку */
   }
   .azb-product-card .azb-price-table th:first-child,
   .azb-product-card .azb-price-table td:first-child {
-    padding-left: 14px;
+    padding-left: 8px;
+    width: 22%;                 /* колонка «Толщина» — фиксированная ширина */
+  }
+  .azb-product-card .azb-price-table td:first-child {
+    font-size: 12px;
+    font-weight: 500;
   }
   .azb-product-card .azb-prod__desc {
     max-width: none;
