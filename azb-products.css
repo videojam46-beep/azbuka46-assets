@@ -76,6 +76,7 @@
 .azb-product-card .azb-mono,
 .azb-product-card .azb-prod__eyebrow,
 .azb-product-card .azb-badge-tl,
+.azb-product-card .azb-badge-tr,
 .azb-product-card .azb-pill,
 .azb-product-card .azb-more,
 .azb-product-card .azb-prod__pricing-head .azb-note,
@@ -229,6 +230,20 @@
 
 .azb-product-card .azb-prod__media .azb-badge-tl--accent {
   background: var(--azb-accent);
+}
+
+/* Бейдж в правом верхнем углу — те же стили, другая позиция */
+.azb-product-card .azb-prod__media .azb-badge-tr {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 11px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(6px);
 }
 
 .azb-product-card .azb-prod__media .azb-colorchip-bar {
