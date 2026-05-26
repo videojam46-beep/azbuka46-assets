@@ -322,7 +322,6 @@
   color: var(--azb-ink-2);
   font-size: 15px;
   line-height: 1.45;
-  max-width: 42ch;
 }
 
 .azb-product-card .azb-prod__specs {
