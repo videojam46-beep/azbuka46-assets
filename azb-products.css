@@ -112,7 +112,7 @@
 }
 
 /* ── Кнопки ─────────────────────────────────────────────────────────────── */
-.azb-product-card .azb-btn {
+:is(.azb-product-card, .azb-block) .azb-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -129,69 +129,69 @@
   transition: all 0.3s ease-in-out;
   border: 1px solid transparent;
 }
-.azb-product-card .azb-btn:active { transform: translateY(1px); }
+:is(.azb-product-card, .azb-block) .azb-btn:active { transform: translateY(1px); }
 /* Залитые красные кнопки — как тильдовский CTA. `!important` + все состояния
    ссылок (:visited, :hover, :focus, :active) + дочерние элементы, чтобы
    тильдовские правила (`a:visited{color}`, span внутри и т.п.) не пробивали. */
-.azb-product-card a.azb-btn--primary,
-.azb-product-card a.azb-btn--primary:visited,
-.azb-product-card a.azb-btn--primary:hover,
-.azb-product-card a.azb-btn--primary:focus,
-.azb-product-card a.azb-btn--primary:active,
-.azb-product-card a.azb-btn--accent,
-.azb-product-card a.azb-btn--accent:visited,
-.azb-product-card a.azb-btn--accent:hover,
-.azb-product-card a.azb-btn--accent:focus,
-.azb-product-card a.azb-btn--accent:active,
-.azb-product-card .azb-btn--primary,
-.azb-product-card .azb-btn--accent {
+:is(.azb-product-card, .azb-block) a.azb-btn--primary,
+:is(.azb-product-card, .azb-block) a.azb-btn--primary:visited,
+:is(.azb-product-card, .azb-block) a.azb-btn--primary:hover,
+:is(.azb-product-card, .azb-block) a.azb-btn--primary:focus,
+:is(.azb-product-card, .azb-block) a.azb-btn--primary:active,
+:is(.azb-product-card, .azb-block) a.azb-btn--accent,
+:is(.azb-product-card, .azb-block) a.azb-btn--accent:visited,
+:is(.azb-product-card, .azb-block) a.azb-btn--accent:hover,
+:is(.azb-product-card, .azb-block) a.azb-btn--accent:focus,
+:is(.azb-product-card, .azb-block) a.azb-btn--accent:active,
+:is(.azb-product-card, .azb-block) .azb-btn--primary,
+:is(.azb-product-card, .azb-block) .azb-btn--accent {
   background: var(--azb-red) !important;
   color: #fff !important;
   text-shadow: none !important;
   opacity: 1 !important;
 }
 /* Hover как у тильдовского связанного стиля — тень, а не смена цвета */
-.azb-product-card a.azb-btn--primary:hover,
-.azb-product-card a.azb-btn--accent:hover,
-.azb-product-card .azb-btn--primary:hover,
-.azb-product-card .azb-btn--accent:hover {
+:is(.azb-product-card, .azb-block) a.azb-btn--primary:hover,
+:is(.azb-product-card, .azb-block) a.azb-btn--accent:hover,
+:is(.azb-product-card, .azb-block) .azb-btn--primary:hover,
+:is(.azb-product-card, .azb-block) .azb-btn--accent:hover {
   box-shadow: 0 2px 3px rgba(0, 11, 48, 0.25);
 }
 /* Внутренний текст (если завернут в <span>) тоже белый */
-.azb-product-card .azb-btn--primary *,
-.azb-product-card .azb-btn--accent * {
+:is(.azb-product-card, .azb-block) .azb-btn--primary *,
+:is(.azb-product-card, .azb-block) .azb-btn--accent * {
   color: #fff !important;
 }
 
 /* Призрак — обводка, цвет ink. Все состояния. */
-.azb-product-card a.azb-btn--ghost,
-.azb-product-card a.azb-btn--ghost:visited,
-.azb-product-card a.azb-btn--ghost:hover,
-.azb-product-card a.azb-btn--ghost:focus,
-.azb-product-card a.azb-btn--ghost:active,
-.azb-product-card .azb-btn--ghost {
+:is(.azb-product-card, .azb-block) a.azb-btn--ghost,
+:is(.azb-product-card, .azb-block) a.azb-btn--ghost:visited,
+:is(.azb-product-card, .azb-block) a.azb-btn--ghost:hover,
+:is(.azb-product-card, .azb-block) a.azb-btn--ghost:focus,
+:is(.azb-product-card, .azb-block) a.azb-btn--ghost:active,
+:is(.azb-product-card, .azb-block) .azb-btn--ghost {
   border-color: var(--azb-line);
   color: var(--azb-ink) !important;
   background: transparent !important;
   text-shadow: none !important;
   opacity: 1 !important;
 }
-.azb-product-card a.azb-btn--ghost:hover,
-.azb-product-card .azb-btn--ghost:hover {
+:is(.azb-product-card, .azb-block) a.azb-btn--ghost:hover,
+:is(.azb-product-card, .azb-block) .azb-btn--ghost:hover {
   border-color: var(--azb-ink);
   background: var(--azb-bg-elev) !important;
 }
-.azb-product-card .azb-btn--ghost * {
+:is(.azb-product-card, .azb-block) .azb-btn--ghost * {
   color: var(--azb-ink) !important;
 }
-.azb-product-card .azb-btn--sm {
+:is(.azb-product-card, .azb-block) .azb-btn--sm {
   height: 44px;
   padding: 0 22px;
   font-size: 12px;
   letter-spacing: 0.05em;
 }
-.azb-product-card .azb-btn .azb-arrow { transition: transform 0.2s; }
-.azb-product-card .azb-btn:hover .azb-arrow { transform: translateX(3px); }
+:is(.azb-product-card, .azb-block) .azb-btn .azb-arrow { transition: transform 0.2s; }
+:is(.azb-product-card, .azb-block) .azb-btn:hover .azb-arrow { transform: translateX(3px); }
 
 /* ── Каркас карточки ────────────────────────────────────────────────────── */
 .azb-product-card .azb-prod {
