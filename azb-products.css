@@ -279,17 +279,17 @@
 
 /* Плашка-капсула: фон/цвет/обводка задаются через inline style на каждом
    элементе — потому что у каждой цветной плашки свой цвет. Здесь — только
-   форма, шрифт и базовые отступы. Мельче — для использования под картинкой. */
+   форма, шрифт и базовые отступы. Типографика — как у бейджей (mono + caps). */
 :is(.azb-product-card, .azb-block) .azb-color-tile {
   display: inline-flex;
   align-items: center;
-  padding: 5px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-family: var(--azb-font);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  font-family: var(--azb-mono-font);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   line-height: 1;
   border: 1px solid transparent;
 }
