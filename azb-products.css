@@ -269,6 +269,37 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* ── Цветные плашки с подписями (для пигмента и подобных товаров) ─────── */
+:is(.azb-product-card, .azb-block) .azb-color-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+:is(.azb-product-card, .azb-block) .azb-color-tile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border: 1px solid var(--azb-line);
+  border-radius: 999px;
+  background: var(--azb-bg-elev);
+  color: var(--azb-ink);
+  font-family: var(--azb-font);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:is(.azb-product-card, .azb-block) .azb-color-tile__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
 /* Stripe-плейсхолдер для карточек без фото */
 .azb-product-card .azb-stripe-ph {
   position: absolute;
