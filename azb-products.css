@@ -273,25 +273,34 @@
 :is(.azb-product-card, .azb-block) .azb-color-tiles {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-top: 4px;
 }
 
 /* Плашка-капсула: фон/цвет/обводка задаются через inline style на каждом
    элементе — потому что у каждой цветной плашки свой цвет. Здесь — только
-   форма, шрифт и базовые отступы. */
+   форма, шрифт и базовые отступы. Мельче — для использования под картинкой. */
 :is(.azb-product-card, .azb-block) .azb-color-tile {
   display: inline-flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 5px 12px;
   border-radius: 999px;
   font-family: var(--azb-font);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: none;
   line-height: 1;
   border: 1px solid transparent;
+}
+
+/* Отдельный ряд под .azb-prod__head — для цветовой палитры */
+.azb-product-card .azb-prod__colors {
+  padding: 18px 36px;
+  border-top: 1px solid var(--azb-line-2);
+}
+@media (max-width: 860px) {
+  .azb-product-card .azb-prod__colors { padding: 14px 22px; }
 }
 
 /* Stripe-плейсхолдер для карточек без фото */
