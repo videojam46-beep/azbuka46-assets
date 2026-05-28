@@ -12,9 +12,17 @@ pigment,1000g,material,500 ₽
 pigment,1500g,material,700 ₽
 pigment,25kg,material,7 000 ₽
 
-# ПУ-связующее — двухкомпонентный клей (10+1 кг)
+# ПУ-связующее двухкомпонентное — клей (10+1 кг)
 product,row,tier,price
 pu-glue-2k,10+1,material,5 500
+
+# ПУ-связующее однокомпонентное — для SBR/EPDM, фасовки 2–220 кг
+product,row,tier,price
+pu-glue-1k,2kg,material,1 400
+pu-glue-1k,3kg,material,2 000
+pu-glue-1k,5kg,material,4 500
+pu-glue-1k,10kg,material,6 500
+pu-glue-1k,220kg,material,90 000
 
 # === РУЛОННЫЕ ПОКРЫТИЯ ===
 
