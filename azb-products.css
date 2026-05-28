@@ -522,10 +522,13 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 24px;
+  /* CSS columns: контент течёт вертикально (1-N в первой колонке, N+1-2N во второй) */
+  columns: 2;
+  column-gap: 24px;
   counter-reset: layer;
+}
+.azb-product-card .azb-prod--catalog .azb-layers__list li {
+  break-inside: avoid;       /* не разрывать строку слоя между колонками */
 }
 .azb-product-card .azb-prod--catalog .azb-layers__list li {
   font-size: 14px;
