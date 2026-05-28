@@ -60,7 +60,7 @@
   }
 
   // ── простой CSV-парсер с поддержкой кавычек и escape ──────────────────────
-  function parseCsvLine(line) {
+  function parseCsvLine(line, delim) {
     var out = [], cur = '', inQ = false, i = 0;
     while (i < line.length) {
       var ch = line.charAt(i);
@@ -71,7 +71,7 @@
         }
         cur += ch; i++;
       } else {
-        if (ch === ',') { out.push(cur); cur = ''; i++; continue; }
+        if (ch === delim) { out.push(cur); cur = ''; i++; continue; }
         if (ch === '"' && cur === '') { inQ = true; i++; continue; }
         cur += ch; i++;
       }
@@ -80,15 +80,33 @@
     return out;
   }
 
+  // Автоопределение разделителя: Excel в RU-локали пишет «;», в EN — «,».
+  // Считаем оба символа в неcomment-строках и берём что чаще.
+  function detectDelimiter(text) {
+    var lines = text.split(/\r?\n/);
+    var sample = '', count = 0;
+    for (var i = 0; i < lines.length && count < 10; i++) {
+      var l = lines[i].trim();
+      if (!l || l.charAt(0) === '#') continue;
+      sample += l + '\n';
+      count++;
+    }
+    var commas = (sample.match(/,/g) || []).length;
+    var semis = (sample.match(/;/g) || []).length;
+    return semis > commas ? ';' : ',';
+  }
+
   function parseCsv(text) {
     if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1); // BOM
+    var delim = detectDelimiter(text);
+    log('CSV разделитель:', delim === ';' ? '«;» (RU Excel)' : '«,» (стандарт)');
     var map = Object.create(null);
     var lines = text.split(/\r?\n/);
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
       if (!line) continue;                         // пустая
       if (line.charAt(0) === '#') continue;        // комментарий-секция
-      var fields = parseCsvLine(line);
+      var fields = parseCsvLine(line, delim);
       if (fields.length < 4) continue;             // битая строка
       var product = fields[0].trim();
       if (!product || product === 'product') continue; // шапка / пусто
