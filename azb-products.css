@@ -486,50 +486,36 @@
 }
 
 /* ── Каталожная карточка (модификатор для серий из PDF-каталогов) ───────────
-   Используется для серий, где основной визуал — большая «каталожная» картинка
-   (структура слоёв + палитра + фото + минитабличка), а текстовые
-   характеристики идут рядом. Заменяет двухколоночный .azb-prod__head
-   на вертикальный body. */
+   Используется для серий с «открытой» 3D-схемой слоёв. Стандартная двухколоночная
+   шапка (media | info), потом отдельные секции: слои текстом, плашки текстур,
+   таблица характеристик. Кнопки внутри info-блока. */
 
-.azb-product-card .azb-prod--catalog { padding: 32px 36px; }
-
-.azb-product-card .azb-prod--catalog .azb-prod__eyebrow { margin-bottom: 10px; }
-.azb-product-card .azb-prod--catalog .azb-prod__title { margin-bottom: 8px; }
-.azb-product-card .azb-prod--catalog .azb-prod__desc { max-width: 78ch; margin-bottom: 24px; }
-
-/* Hero-картинка каталога: полная ширина, мягкая обводка, contain (чтобы белый фон не обрезался) */
-.azb-product-card .azb-catalog-figure {
+/* Media карточек каталога — диаграмма слоёв на светлом фоне, без обрезки */
+.azb-product-card .azb-prod--catalog .azb-prod__media {
   background: var(--azb-bg);
-  border: 1px solid var(--azb-line-2);
-  border-radius: var(--azb-radius-md);
-  overflow: hidden;
-  margin: 0 0 24px;
+  aspect-ratio: 4 / 3;
 }
-.azb-product-card .azb-catalog-figure img {
-  width: 100%;
-  height: auto;
-  display: block;
+.azb-product-card .azb-prod--catalog .azb-prod__media img {
+  object-fit: contain;
+  padding: 24px;
 }
-
-.azb-product-card .azb-prod--catalog .azb-prod__specs {
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 24px;
-  margin-bottom: 20px;
+.azb-product-card .azb-prod--catalog .azb-prod__media .azb-badge-tl {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--azb-ink);
+  backdrop-filter: blur(4px);
 }
 
+/* Слои текстом — отдельная секция под шапкой */
 .azb-product-card .azb-prod--catalog .azb-layers {
-  background: var(--azb-bg);
-  border: 1px solid var(--azb-line-2);
-  border-radius: var(--azb-radius-sm);
-  padding: 18px 22px;
-  margin-bottom: 24px;
+  padding: 22px 32px 4px;
+  border-top: 1px solid var(--azb-line);
 }
 .azb-product-card .azb-prod--catalog .azb-layers__title {
   font-size: 12px;
   color: var(--azb-ink-3);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   font-family: var(--azb-mono-font);
 }
 .azb-product-card .azb-prod--catalog .azb-layers__list {
@@ -538,7 +524,7 @@
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px 24px;
+  gap: 6px 24px;
   counter-reset: layer;
 }
 .azb-product-card .azb-prod--catalog .azb-layers__list li {
@@ -547,12 +533,13 @@
   padding-left: 28px;
   position: relative;
   counter-increment: layer;
+  line-height: 1.4;
 }
 .azb-product-card .azb-prod--catalog .azb-layers__list li::before {
   content: counter(layer);
   position: absolute;
   left: 0;
-  top: 0;
+  top: 1px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -565,25 +552,44 @@
   justify-content: center;
 }
 
-/* Артикулы цветов как chip'ы */
-.azb-product-card .azb-prod--catalog .azb-art-tiles {
+/* Плашки текстур (картинка + артикул под ней). Аналог .azb-color-tiles
+   но крупнее и с растровыми изображениями фактуры покрытия. */
+.azb-product-card .azb-prod--catalog .azb-texture-tiles {
+  padding: 22px 32px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 16px;
+  border-top: 1px solid var(--azb-line);
+  margin-top: 18px;
 }
-.azb-product-card .azb-prod--catalog .azb-art-tile {
-  background: var(--azb-bg-alt);
+.azb-product-card .azb-prod--catalog .azb-texture-tile {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+.azb-product-card .azb-prod--catalog .azb-texture-tile img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
   border: 1px solid var(--azb-line-2);
-  border-radius: 4px;
-  padding: 5px 10px;
+  display: block;
+}
+.azb-product-card .azb-prod--catalog .azb-texture-tile figcaption {
   font-family: var(--azb-mono-font);
   font-size: 11px;
+  letter-spacing: 0.04em;
   color: var(--azb-ink-2);
-  letter-spacing: 0.02em;
+  text-align: left;
 }
 
-/* Заголовок «всего каталога» — большой блок над сеткой серий */
+/* Текстуры с горизонтальным форматом (5602, 005819 wood) — широкая плашка */
+.azb-product-card .azb-prod--catalog .azb-texture-tile--wide { width: 280px; }
+.azb-product-card .azb-prod--catalog .azb-texture-tile--wide img { aspect-ratio: 16 / 5; }
+
+/* Контейнер всех 7 карточек каталога */
 .azb-block .azb-catalog-intro { max-width: 78ch; color: var(--azb-ink-3); font-size: 16px; line-height: 1.55; margin-bottom: 36px; }
 .azb-block .azb-catalog-stack { display: flex; flex-direction: column; gap: 24px; }
 
@@ -591,10 +597,13 @@
 @media (max-width: 860px) {
   .azb-product-card .azb-prod__head { grid-template-columns: 1fr; }
   .azb-product-card .azb-prod__media { aspect-ratio: 3 / 2; }
-  .azb-product-card .azb-prod--catalog { padding: 20px 18px; }
+  .azb-product-card .azb-prod--catalog .azb-prod__media { aspect-ratio: 4 / 3; }
+  .azb-product-card .azb-prod--catalog .azb-prod__media img { padding: 16px; }
+  .azb-product-card .azb-prod--catalog .azb-layers { padding: 18px 22px 4px; }
   .azb-product-card .azb-prod--catalog .azb-layers__list { grid-template-columns: 1fr; }
-  .azb-product-card .azb-prod--catalog .azb-prod__specs { grid-template-columns: 1fr; }
-  .azb-product-card .azb-prod--catalog .azb-layers { padding: 14px 16px; }
+  .azb-product-card .azb-prod--catalog .azb-texture-tiles { padding: 18px 22px 0; gap: 12px; }
+  .azb-product-card .azb-prod--catalog .azb-texture-tile { width: calc(50% - 6px); }
+  .azb-product-card .azb-prod--catalog .azb-texture-tile--wide { width: 100%; }
   .azb-product-card .azb-prod__info {
     padding: 22px;
     gap: 12px;
