@@ -91,6 +91,19 @@ premium-epdm,30+10,300,5 500
 premium-epdm,30+10,1000,5 300
 premium-epdm,30+10,1000+,договорная
 
+# === ИСКУССТВЕННАЯ ТРАВА (цена за 1 м²) ===
+
+# SPORTFLOOR TURF — линейки искусственной травы Apoluza
+product,row,tier,price
+turf-60-14,turf-60-14,material,780
+turf-50-14,turf-50-14,material,750
+turf-40-14,turf-40-14,material,720
+turf-noninfill-30-24,turf-noninfill-30-24,material,720
+turf-paddle-12-25-green,turf-paddle-12-25-green,material,1 600
+turf-paddle-12-25-redblue,turf-paddle-12-25-redblue,material,1 750
+turf-multi-20-22,turf-multi-20-22,material,690
+turf-multi-20-20,turf-multi-20-20,material,680
+
 # === СЫРЬЁ ===
 
 # EPDM-крошка — цена за килограмм, по фракции и объёму закупки
