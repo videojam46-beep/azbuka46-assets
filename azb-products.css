@@ -919,3 +919,137 @@
     padding: 24px;
   }
 }
+
+/* =========================================================================
+   3D-фигуры — составной блок: feature-интро + сетка коллекций + таблица товаров
+   ========================================================================= */
+
+/* Разделение секций внутри одного блока */
+.azb-block .azb-stack-lg {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+/* ── Универсальная фото-заглушка ──────────────────────────────────────────── */
+.azb-block .azb-ph {
+  position: relative;
+  background:
+    repeating-linear-gradient(135deg, var(--azb-bg-alt) 0 10px, var(--azb-bg) 10px 20px);
+  border: 1px solid var(--azb-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.azb-block .azb-ph::after {
+  content: 'ФОТО';
+  font-family: var(--azb-mono-font);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--azb-ink-4);
+}
+.azb-block .azb-ph img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Секция 1: feature-интро (текст + изображение) ────────────────────────── */
+.azb-block .azb-feature {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.azb-block .azb-feature__text .azb-h2 {
+  margin: 4px 0 18px;
+}
+
+.azb-block .azb-feature__text p {
+  color: var(--azb-ink-3);
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 52ch;
+}
+
+.azb-block .azb-feature__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--azb-radius-lg);
+}
+.azb-block .azb-feature__media.azb-ph,
+.azb-block .azb-feature__media img {
+  border-radius: var(--azb-radius-lg);
+}
+
+@media (max-width: 760px) {
+  .azb-block .azb-feature {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .azb-block .azb-feature__text p { font-size: 15px; }
+}
+
+/* ── Секция 2: сетка карточек коллекций ───────────────────────────────────── */
+.azb-block .azb-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.azb-block .azb-collection-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.azb-block .azb-collection-card .azb-collection-card__media {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--azb-radius-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.azb-block .azb-collection-card .azb-collection-card__media.azb-ph,
+.azb-block .azb-collection-card .azb-collection-card__media img {
+  border-radius: var(--azb-radius-md);
+}
+
+.azb-block .azb-collection-card:hover .azb-collection-card__media {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(10, 10, 10, 0.10);
+}
+
+.azb-block .azb-collection-card figcaption {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--azb-ink);
+  letter-spacing: -0.005em;
+}
+
+@media (max-width: 860px) {
+  .azb-block .azb-collection-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+}
+@media (max-width: 560px) {
+  .azb-block .azb-collection-grid { grid-template-columns: repeat(2, 1fr); }
+  .azb-block .azb-collection-card figcaption { font-size: 14px; }
+}
+
+/* ── Секция 3: таблица товаров ────────────────────────────────────────────── */
+/* Прокрутка широкой 6-колоночной таблицы на узких экранах */
+.azb-product-card .azb-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.azb-product-card .azb-table-scroll .azb-price-table {
+  min-width: 720px;
+}
+/* Числовые колонки цен — моноширинным, выравнивание по правому краю */
+.azb-product-card .azb-price-table td[data-tier] {
+  font-family: var(--azb-mono-font);
+  font-size: 13px;
+  white-space: nowrap;
+}

@@ -104,6 +104,29 @@ turf-paddle-12-25-redblue,turf-paddle-12-25-redblue,material,1 750
 turf-multi-20-22,turf-multi-20-22,material,690
 turf-multi-20-20,turf-multi-20-20,material,680
 
+# === 3D-ФИГУРЫ (цена за изделие, по типу резины) ===
+
+# Объёмные фигуры из резиновой крошки. tier: sbr / epdm / epdm-alif
+product,row,tier,price
+figures-3d,medved,sbr,140 000
+figures-3d,medved,epdm,148 450
+figures-3d,medved,epdm-alif,191 000
+figures-3d,begemot,sbr,116 000
+figures-3d,begemot,epdm,124 000
+figures-3d,begemot,epdm-alif,143 000
+figures-3d,krolik,sbr,48 000
+figures-3d,krolik,epdm,57 000
+figures-3d,krolik,epdm-alif,75 000
+figures-3d,polusfera-bozhya-korovka-500,sbr,27 500
+figures-3d,polusfera-bozhya-korovka-500,epdm,30 500
+figures-3d,polusfera-bozhya-korovka-500,epdm-alif,38 000
+figures-3d,rakushka,sbr,24 000
+figures-3d,rakushka,epdm,25 500
+figures-3d,rakushka,epdm-alif,28 500
+figures-3d,raketa,sbr,124 000
+figures-3d,raketa,epdm,136 000
+figures-3d,raketa,epdm-alif,161 000
+
 # === СЫРЬЁ ===
 
 # EPDM-крошка — цена за килограмм, по фракции и объёму закупки
