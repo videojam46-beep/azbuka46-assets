@@ -104,6 +104,16 @@ turf-paddle-12-25-redblue,turf-paddle-12-25-redblue,material,1 750
 turf-multi-20-22,turf-multi-20-22,material,690
 turf-multi-20-20,turf-multi-20-20,material,680
 
+# Сопутствующие товары для искусственной травы — цена за единицу
+product,row,tier,price
+turf-accessories,shov-lenta,material,5 500
+turf-accessories,pu-glue-2k-green,material,5 500
+
+# Монтаж искусственной травы — цена по объёму. tier: price
+product,row,tier,price
+turf-montazh,do-3000,price,350 ₽/м²
+turf-montazh,ot-3000,price,договорная
+
 # === 3D-ФИГУРЫ (цена за изделие, по типу резины) ===
 
 # Объёмные фигуры из резиновой крошки. tier: sbr / epdm / epdm-alif

@@ -1053,3 +1053,15 @@
   font-size: 13px;
   white-space: nowrap;
 }
+
+/* Текстовая ссылка внутри карточек/блоков (напр. товар со ссылкой в таблице) */
+:is(.azb-product-card, .azb-block) .azb-link {
+  color: var(--azb-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--azb-line);
+  transition: text-decoration-color 0.15s ease;
+}
+:is(.azb-product-card, .azb-block) .azb-link:hover {
+  text-decoration-color: var(--azb-ink);
+}
