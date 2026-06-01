@@ -127,7 +127,7 @@
       var card = cards[c];
       var product = card.getAttribute('data-product');
       if (!product) continue;
-      var rows = card.querySelectorAll('tr[data-pack], tr[data-thickness], tr[data-epdm], tr[data-fraction]');
+      var rows = card.querySelectorAll('[data-pack], [data-thickness], [data-epdm], [data-fraction]');
       for (var r = 0; r < rows.length; r++) {
         var tr = rows[r];
         var row = tr.getAttribute('data-pack')
@@ -135,7 +135,7 @@
                || tr.getAttribute('data-epdm')
                || tr.getAttribute('data-fraction');
         if (!row) continue;
-        var cells = tr.querySelectorAll('td[data-tier]');
+        var cells = tr.querySelectorAll('[data-tier]');
         for (var t = 0; t < cells.length; t++) {
           var td = cells[t];
           var tier = td.getAttribute('data-tier');

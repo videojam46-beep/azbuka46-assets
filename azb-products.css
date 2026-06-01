@@ -1054,6 +1054,80 @@
   white-space: nowrap;
 }
 
+/* ── Карточки-позиции (белые плашки без фото: товар/тариф + цена) ─────────── */
+.azb-block .azb-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.azb-block .azb-offer-card {
+  background: var(--azb-bg-elev);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-lg);
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.azb-block .azb-offer-card:hover {
+  border-color: var(--azb-line);
+  box-shadow: 0 10px 28px rgba(10, 10, 10, 0.07);
+}
+
+.azb-block .azb-offer-card__eyebrow {
+  font-family: var(--azb-mono-font);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--azb-ink-4);
+}
+
+.azb-block .azb-offer-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.azb-block .azb-offer-card__meta {
+  color: var(--azb-ink-3);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.azb-block .azb-offer-card__foot {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--azb-line-2);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.azb-block .azb-offer-card__price {
+  font-family: var(--azb-mono-font);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--azb-ink);
+  letter-spacing: -0.01em;
+}
+.azb-block .azb-offer-card__price.azb-deal {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--azb-ink-3);
+}
+
+.azb-block .azb-offer-card__unit {
+  font-size: 13px;
+  color: var(--azb-ink-3);
+}
+
+@media (max-width: 640px) {
+  .azb-block .azb-offer-grid { grid-template-columns: 1fr; }
+}
+
 /* Текстовая ссылка внутри карточек/блоков (напр. товар со ссылкой в таблице) */
 :is(.azb-product-card, .azb-block) .azb-link {
   color: var(--azb-ink);
