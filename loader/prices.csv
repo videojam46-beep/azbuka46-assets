@@ -114,6 +114,14 @@ product,row,tier,price
 turf-montazh,do-3000,price,350 ₽/м²
 turf-montazh,ot-3000,price,договорная
 
+# === ПЛИТКА (карточки серий, цена «от» за штуку) ===
+
+# tier: from — нижняя граница цены в карточке группы
+product,row,tier,price
+tile-pvc,from,from,470
+tile-rubber,from,from,425
+tile-tactile,from,from,177
+
 # === 3D-ФИГУРЫ (цена за изделие, по типу резины) ===
 
 # Объёмные фигуры из резиновой крошки. tier: sbr / epdm / epdm-alif
