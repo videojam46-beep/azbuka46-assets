@@ -1194,6 +1194,7 @@
   border-radius: 6px;
   border: 1px solid var(--azb-line-2);
   display: block;
+  object-fit: cover;
 }
 .azb-product-card .azb-tile-plate figcaption {
   font-family: var(--azb-mono-font);
