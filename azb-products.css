@@ -1351,3 +1351,45 @@
 @media (max-width: 600px) {
   .azb-block .azb-cta { padding: 28px 22px; }
 }
+
+/* ── Подходящие основания: сетка белых карточек с галочкой ────────────────── */
+.azb-block .azb-bases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--azb-line);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-md);
+  overflow: hidden;
+}
+.azb-block .azb-base-card {
+  background: var(--azb-bg-elev);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--azb-ink);
+}
+.azb-block .azb-base-card .azb-check {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--azb-ink);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.azb-block .azb-base-card .azb-check svg {
+  width: 13px;
+  height: 13px;
+}
+@media (max-width: 760px) {
+  .azb-block .azb-bases-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .azb-block .azb-bases-grid { grid-template-columns: 1fr; }
+}
