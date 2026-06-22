@@ -122,6 +122,25 @@ tile-pvc,from,from,470
 tile-rubber,from,from,425
 tile-tactile,from,from,177
 
+# Резиновая плитка «Стандарт» (из крошки) — цена за 1 м², по толщине и объёму
+product,row,tier,price
+rubber-tile-standard,30,to200,2 500
+rubber-tile-standard,30,from350,2 200
+rubber-tile-standard,40,to200,2 800
+rubber-tile-standard,40,from350,2 200
+rubber-tile-standard,45,to200,3 000
+rubber-tile-standard,45,from350,2 400
+
+# Монтаж резиновой плитки — цена по объёму. tier: price
+product,row,tier,price
+rubber-tile-montazh,do-300,price,500 ₽/м²
+rubber-tile-montazh,ot-300,price,договорная
+
+# Наборы SPORTEX (DIY) — цена за штуку
+product,row,tier,price
+sportex-kit-2m,price,price,2 500
+sportex-kit-3m,price,price,4 200
+
 # === 3D-ФИГУРЫ (цена за изделие, по типу резины) ===
 
 # Объёмные фигуры из резиновой крошки. tier: sbr / epdm / epdm-alif
