@@ -1419,3 +1419,22 @@
   background: var(--azb-ink-4);
 }
 .azb-block .azb-col-card .azb-list { margin-top: 4px; }
+
+/* ── Плитки: отдельные карточки равной ширины, центрированные (для 5 и т.п.) ── */
+.azb-block .azb-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.azb-block .azb-tiles .azb-app-card {
+  flex: 0 1 calc(33.333% - 11px);
+  border: 1px solid var(--azb-line);
+  border-radius: var(--azb-radius-md);
+}
+@media (max-width: 900px) {
+  .azb-block .azb-tiles .azb-app-card { flex-basis: calc(50% - 8px); }
+}
+@media (max-width: 560px) {
+  .azb-block .azb-tiles .azb-app-card { flex-basis: 100%; }
+}
