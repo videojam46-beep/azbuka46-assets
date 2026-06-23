@@ -1393,3 +1393,29 @@
 @media (max-width: 480px) {
   .azb-block .azb-bases-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Маркированный список (тендеры, чеклисты) ─────────────────────────────── */
+.azb-block .azb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.azb-block .azb-list li {
+  list-style: none;
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--azb-ink-2);
+  line-height: 1.45;
+}
+.azb-block .azb-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--azb-ink-4);
+}
+.azb-block .azb-col-card .azb-list { margin-top: 4px; }
