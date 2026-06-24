@@ -141,6 +141,12 @@ product,row,tier,price
 sportex-kit-2m,price,price,2 500
 sportex-kit-3m,price,price,4 200
 
+# Чёрная крошка SBR — цена за 1 кг, по фракции (значение «от»)
+product,row,tier,price
+sbr-kroshka,0-1,price,от 45
+sbr-kroshka,1-3,price,от 40
+sbr-kroshka,2-4,price,от 40
+
 # === 3D-ФИГУРЫ (цена за изделие, по типу резины) ===
 
 # Объёмные фигуры из резиновой крошки. tier: sbr / epdm / epdm-alif
