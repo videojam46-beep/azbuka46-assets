@@ -1439,34 +1439,32 @@
   .azb-block .azb-tiles .azb-app-card { flex-basis: 100%; }
 }
 
-/* ── Подходящие основания: продолговатые плашки текстур + подпись ──────────── */
+/* ── Подходящие основания: плашки текстур 3×2, подпись снизу ──────────────── */
 .azb-block .azb-substrates {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 .azb-block .azb-substrate {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 28px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .azb-block .azb-substrate__img {
   width: 100%;
-  aspect-ratio: 16 / 4;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--azb-line-2);
   display: block;
 }
 .azb-block .azb-substrate__label {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.25;
 }
 @media (max-width: 680px) {
-  .azb-block .azb-substrate { grid-template-columns: 1fr; gap: 8px; }
-  .azb-block .azb-substrate__img { aspect-ratio: 16 / 5; }
-  .azb-block .azb-substrate__label { font-size: 16px; }
+  .azb-block .azb-substrates { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .azb-block .azb-substrate__label { font-size: 14px; }
 }
