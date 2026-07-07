@@ -336,6 +336,89 @@
   max-width: none;
 }
 
+/* =========================================================================
+   Карусель фото в media (carousel.js) — листание цветов покрытия
+   Слайды — flex-лента; стрелки ‹ ›; цветные чипы работают как переключатели.
+   ========================================================================= */
+.azb-product-card .azb-prod__media .azb-carousel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: pan-y;
+  outline: none;
+}
+.azb-product-card .azb-carousel__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
+}
+.azb-product-card .azb-carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  height: 100%;
+}
+/* картинка слайда заполняет свой слайд (см. общее правило .azb-prod__media img) */
+
+.azb-product-card .azb-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s ease, opacity .15s ease;
+}
+.azb-product-card .azb-carousel__nav:hover { background: rgba(0, 0, 0, 0.62); }
+.azb-product-card .azb-carousel__nav--prev { left: 12px; }
+.azb-product-card .azb-carousel__nav--next { right: 12px; }
+.azb-product-card .azb-carousel__nav[disabled] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Метка текущего цвета (верх-право) */
+.azb-product-card .azb-carousel__label {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 3;
+  font-size: 11px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+
+/* Чипы как кнопки-переключатели цвета */
+.azb-product-card .azb-colorchip-bar .azb-colorchip {
+  padding: 0;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.azb-product-card .azb-colorchip-bar .azb-colorchip.is-active {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+}
+
 /* ── Инфо-блок ──────────────────────────────────────────────────────────── */
 .azb-product-card .azb-prod__info {
   padding: 32px 36px;
