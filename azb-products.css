@@ -418,6 +418,15 @@
   transform: scale(1.25);
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
 }
+/* неактивный чип — цвет есть в линейке, но фото нет (не переключает) */
+.azb-product-card .azb-colorchip-bar .azb-colorchip--off {
+  cursor: default;
+  opacity: 0.4;
+}
+.azb-product-card .azb-colorchip-bar .azb-colorchip--off:hover {
+  transform: none;
+  box-shadow: none;
+}
 
 /* ── Инфо-блок ──────────────────────────────────────────────────────────── */
 .azb-product-card .azb-prod__info {
