@@ -625,18 +625,18 @@
 .azb-product-card .azb-prod--catalog .azb-layers__list li {
   font-size: 14px;
   color: var(--azb-ink-2);
-  padding-left: 28px;
-  position: relative;
   counter-increment: layer;
   line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 .azb-product-card .azb-prod--catalog .azb-layers__list li::before {
   content: counter(layer);
-  position: absolute;
-  left: 0;
-  top: 1px;
+  flex: 0 0 20px;         /* фикс-ширина: кружок не сжимается при переносе текста */
   width: 20px;
   height: 20px;
+  margin-top: 1px;
   border-radius: 50%;
   background: var(--azb-ink);
   color: #fff;
@@ -696,7 +696,7 @@
   .azb-product-card .azb-prod--catalog .azb-prod__media { aspect-ratio: 4 / 3; }
   .azb-product-card .azb-prod--catalog .azb-prod__media img { padding: 16px; }
   .azb-product-card .azb-prod--catalog .azb-layers { padding: 18px 22px 4px; }
-  .azb-product-card .azb-prod--catalog .azb-layers__list { grid-template-columns: 1fr; }
+  .azb-product-card .azb-prod--catalog .azb-layers__list { columns: 1; }
   .azb-product-card .azb-prod--catalog .azb-texture-tiles { padding: 18px 22px 0; gap: 12px; }
   .azb-product-card .azb-prod--catalog .azb-texture-tile { width: calc(50% - 6px); }
   .azb-product-card .azb-prod--catalog .azb-texture-tile--wide { width: 100%; }
