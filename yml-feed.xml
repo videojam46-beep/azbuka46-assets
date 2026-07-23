@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-07-23 16:22">
+<yml_catalog date="2026-07-23 16:59">
   <shop>
     <name>Азбука покрытий</name>
     <company>ООО «АЗБУКА ПОКРЫТИЙ»</company>
@@ -199,15 +199,15 @@
         <param name="Город">Курск</param>
       </offer>
       <offer id="pigment" available="true">
-        <name>Цветной пигмент для смесей — от 350 ₽</name>
+        <name>Цветной пигмент для смесей — от 300 ₽</name>
         <url>https://azbuka46.ru/pigments</url>
-        <price>350</price>
+        <price>300</price>
         <currencyId>RUB</currencyId>
         <categoryId>8</categoryId>
         <picture>https://static.tildacdn.com/tild3238-6437-4032-b962-363236383835/_2.png</picture>
         <vendor>Азбука покрытий</vendor>
         <description>Сухой светостойкий пигмент для резиновой крошки, бетона и гипса. 8 цветов, фасовки 500 г – 25 кг.</description>
-        <param name="Минимальная цена">от 350 ₽</param>
+        <param name="Минимальная цена">от 300 ₽</param>
         <param name="Город">Курск</param>
       </offer>
       <offer id="pu-glue" available="true">
