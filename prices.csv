@@ -1,0 +1,121 @@
+# Прайс-лист «Азбука покрытий» — источник цен для сайта azbuka46.ru;;;
+# Редактируй только колонку price. Колонки product/row/tier — это адреса ячеек на сайте; не менять.;;
+# Строки начинающиеся с # — комментарии (для удобства); парсером игнорируются.;;
+# Пустые строки и повторы шапки тоже игнорируются.;;;
+;;;
+# === СУХИЕ МАТЕРИАЛЫ ===;;;
+;;;
+# Пигмент — сухой краситель;;;
+product;row;tier;price
+pigment;500g;material;350 ₽
+pigment;1000g;material;500 ₽
+pigment;1500g;material;700 ₽
+pigment;25kg;material;7 000 ₽
+;;;
+# ПУ-связующее — двухкомпонентный клей (10+1 кг);;;
+product;row;tier;price
+pu-glue-2k;10+1;material;5 500
+;;;
+# === РУЛОННЫЕ ПОКРЫТИЯ ===;;;
+;;;
+# Sportex Eco — рулонное;2–10 мм;;
+product;row;tier;price
+sportex-eco;2-10;material;от 1 250
+;;;
+# Sportex Mix — рулонное с EPDM-вкраплениями; по % EPDM;;
+product;row;tier;price
+sportex-mix;15;material;от 680
+sportex-mix;20;material;от 680
+sportex-mix;30;material;от 740
+;;;
+# Sportex Флекс — рулонное универсальное;8–20 мм;;
+product;row;tier;price
+flex-roll;8-20;material;от 1 670 ₽
+;;;
+# === БЕСШОВНЫЕ ПОКРЫТИЯ (цена за 1 м²) ===;;;
+;;;
+# Sportex Классик — однослойное; толщина / тираж м²;;
+product;row;tier;price
+sportex-klassik;10;100;2 000
+sportex-klassik;10;300;1 600
+sportex-klassik;10;1000;1 500
+sportex-klassik;10;1000+;договорная
+sportex-klassik;15;100;2 500
+sportex-klassik;15;300;2 200
+sportex-klassik;15;1000;2 000
+sportex-klassik;15;1000+;договорная
+sportex-klassik;20;100;3 000
+sportex-klassik;20;300;2 500
+sportex-klassik;20;1000;2 300
+sportex-klassik;20;1000+;договорная
+;;;
+# Sportex Комфорт — двухслойное (нижний + верхний слой); толщина / тираж м²;;
+product;row;tier;price
+sportex-komfort;10+10;100;3 100
+sportex-komfort;10+10;300;2 600
+sportex-komfort;10+10;1000;2 400
+sportex-komfort;10+10;1000+;договорная
+sportex-komfort;20+10;100;4 000
+sportex-komfort;20+10;300;3 500
+sportex-komfort;20+10;1000;3 300
+sportex-komfort;20+10;1000+;договорная
+sportex-komfort;30+10;100;4 500
+sportex-komfort;30+10;300;4 000
+sportex-komfort;30+10;1000;3 800
+sportex-komfort;30+10;1000+;договорная
+;;;
+# Sportex Премиум — с верхним слоем EPDM; толщина / тираж м²;;
+product;row;tier;price
+premium-epdm;0+10;100;3 000
+premium-epdm;0+10;300;2 800
+premium-epdm;0+10;1000;2 600
+premium-epdm;0+10;1000+;договорная
+premium-epdm;10+10;100;5 000
+premium-epdm;10+10;300;4 400
+premium-epdm;10+10;1000;4 200
+premium-epdm;10+10;1000+;договорная
+premium-epdm;20+10;100;5 500
+premium-epdm;20+10;300;4 900
+premium-epdm;20+10;1000;4 700
+premium-epdm;20+10;1000+;договорная
+premium-epdm;30+10;100;6 000
+premium-epdm;30+10;300;5 500
+premium-epdm;30+10;1000;5 300
+premium-epdm;30+10;1000+;договорная
+;;;
+# === СЫРЬЁ ===;;;
+;;;
+# SBR-крошка — цена за килограмм; по фракции;;
+product;row;tier;price
+sbr-kroshka;0-1;price;от 45
+sbr-kroshka;1-3;price;от 40
+sbr-kroshka;2-4;price;от 40
+;;;
+# EPDM-крошка — цена за килограмм; по фракции и объёму закупки;;
+product;row;tier;price
+epdm-kroshka;0.6-2.5;retail;180
+epdm-kroshka;0.6-2.5;100kg;160
+epdm-kroshka;0.6-2.5;500kg;150
+epdm-kroshka;0.6-2.5;wholesale;договорная
+epdm-kroshka;1-3;retail;160
+epdm-kroshka;1-3;100kg;150
+epdm-kroshka;1-3;500kg;140
+epdm-kroshka;1-3;wholesale;договорная
+epdm-kroshka;2-4;retail;150
+epdm-kroshka;2-4;100kg;140
+epdm-kroshka;2-4;500kg;130
+epdm-kroshka;2-4;wholesale;договорная
+;;;
+# === ФИД: минимальные цены «от» для товаров без детальных таблиц на сайте ===
+# Эти строки использует ТОЛЬКО генератор (фид Яндекса + schema.org).
+# На сайте таких ячеек нет — загрузчик их игнорирует. Меняй число в колонке price.
+product;row;tier;price
+rubber-tile;from;feed;2200
+pvc-tile;from;feed;470
+rubber-mod-tile;from;feed;425
+tactile-tile;from;feed;177
+sportgrass;from;feed;680
+sportex-kit-2;from;feed;2500
+sportex-kit-3;from;feed;4200
+figures-3d;from;feed;24000
+pu-glue;from;feed;1400

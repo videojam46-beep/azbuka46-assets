@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-07-23 16:22">
+  <shop>
+    <name>Азбука покрытий</name>
+    <company>ООО «АЗБУКА ПОКРЫТИЙ»</company>
+    <url>https://azbuka46.ru</url>
+    <currencies>
+      <currency id="RUB" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Бесшовные резиновые покрытия</category>
+      <category id="2">Рулонные резиновые покрытия</category>
+      <category id="3">Резиновая плитка</category>
+      <category id="4">ПВХ-плитка и модульные покрытия</category>
+      <category id="5">Искусственная трава</category>
+      <category id="6">Наборы для укладки</category>
+      <category id="7">3D-фигуры и геопластика</category>
+      <category id="8">Материалы</category>
+    </categories>
+    <offers>
+      <offer id="klassik" available="true">
+        <name>Бесшовное покрытие Sportex Классик — от 1 500 ₽/м²</name>
+        <url>https://azbuka46.ru/rubber-coatings</url>
+        <price>1500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://cdn.jsdelivr.net/gh/videojam46-beep/azbuka46-assets@main/img/sportex/klassik/klassik-siniy.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Однослойное бесшовное покрытие из SBR-крошки с пигментом. Толщина 10–20 мм, 8 цветов. Цена под ключ с монтажом.</description>
+        <param name="Минимальная цена">от 1 500 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="komfort" available="true">
+        <name>Бесшовное покрытие Sportex Комфорт — от 2 400 ₽/м²</name>
+        <url>https://azbuka46.ru/rubber-coatings</url>
+        <price>2400</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3036-6433-4137-a661-666336643463/2_43-2.png</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Двухслойное бесшовное покрытие SBR + SBR с амортизирующей подложкой. Для детских и спортивных площадок. Цена под ключ.</description>
+        <param name="Минимальная цена">от 2 400 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="premium-epdm" available="true">
+        <name>Бесшовное покрытие Премиум EPDM — от 2 600 ₽/м²</name>
+        <url>https://azbuka46.ru/rubber-coatings</url>
+        <price>2600</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://static.tildacdn.com/tild3963-6331-4664-a562-646533633136/2_epdm.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Двухслойное покрытие с цветным EPDM-гранулятом сверху. Не выцветает на солнце, 20+ цветов. Цена под ключ.</description>
+        <param name="Минимальная цена">от 2 600 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="epdm-kroshka" available="true">
+        <name>Цветная крошка EPDM — от 130 ₽/кг</name>
+        <url>https://azbuka46.ru/rubber-coatings</url>
+        <price>130</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>8</categoryId>
+        <picture>https://static.tildacdn.com/tild3665-3630-4136-a535-336265356232/_.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Цветной EPDM-гранулят для финишного слоя, декоративных зон и разметки. Фракция 0,6–3,5 мм, 20+ оттенков.</description>
+        <param name="Минимальная цена">от 130 ₽/кг</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="flex-roll" available="true">
+        <name>Рулонное покрытие Флекс — от 1 670 ₽/м²</name>
+        <url>https://azbuka46.ru/rolledrubber</url>
+        <price>1670</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild3165-3033-4839-a435-343738326266/_sbr2.jpeg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Рулонное покрытие из SBR-крошки с ПУ-связующим. Ширина 1,22 м, толщина 8–20 мм, 8 цветов.</description>
+        <param name="Минимальная цена">от 1 670 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="sportex-mix" available="true">
+        <name>Рулонное покрытие Микс — от 680 ₽/м²</name>
+        <url>https://azbuka46.ru/rolledrubber</url>
+        <price>680</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6162-3533-4338-b839-343266323539/sbr_epdm.jpeg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Рулонное покрытие SBR с цветными EPDM-вкраплениями. Толщина 2–12 мм, содержание EPDM 15–30%.</description>
+        <param name="Минимальная цена">от 680 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="sportex-eco" available="true">
+        <name>Рулонное покрытие Эко — от 1 250 ₽/м²</name>
+        <url>https://azbuka46.ru/rolledrubber</url>
+        <price>1250</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://static.tildacdn.com/tild6237-3663-4730-b032-626339646135/epdm.jpeg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Рулонное покрытие из 100% цветного EPDM-гранулята. Толщина 2–10 мм, более 20 цветов.</description>
+        <param name="Минимальная цена">от 1 250 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="rubber-tile" available="true">
+        <name>Резиновая плитка Standard — от 2 200 ₽/м²</name>
+        <url>https://azbuka46.ru/rubber-tile</url>
+        <price>2200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://cdn.jsdelivr.net/gh/videojam46-beep/azbuka46-assets@main/img/tiles/standard/tile-siniy.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Плитка из резиновой крошки 500×500 мм, толщина 30/40/45 мм, 8 цветов. Для площадок, террас и дорожек.</description>
+        <param name="Минимальная цена">от 2 200 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="pvc-tile" available="true">
+        <name>Модульная ПВХ-плитка — от 470 ₽/шт</name>
+        <url>https://azbuka46.ru/pvc-tile</url>
+        <price>470</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://cdn.jsdelivr.net/gh/videojam46-beep/azbuka46-assets@main/img/tiles/sold-prom.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Модульная ПВХ-плитка с Т-образным замком. Толщина 4–9 мм, 8 цветов. Для складов, гаражей, спортзалов.</description>
+        <param name="Минимальная цена">от 470 ₽/шт</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="rubber-mod-tile" available="true">
+        <name>Резиновая модульная плитка — от 425 ₽/шт</name>
+        <url>https://azbuka46.ru/pvc-tile</url>
+        <price>425</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://cdn.jsdelivr.net/gh/videojam46-beep/azbuka46-assets@main/img/tiles/rubber-unidor.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Чёрная резиновая модульная плитка 500×500 мм, толщина 10–25 мм. Для входных зон, проходов, гаражей.</description>
+        <param name="Минимальная цена">от 425 ₽/шт</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="tactile-tile" available="true">
+        <name>Тактильная плитка — от 177 ₽/шт</name>
+        <url>https://azbuka46.ru/pvc-tile</url>
+        <price>177</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <picture>https://static.tildacdn.com/tild6136-3235-4364-b131-623332373065/_2__2_.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Жёлтая ПВХ-плитка 300×300 мм для доступной среды и навигации. Разные типы рифления.</description>
+        <param name="Минимальная цена">от 177 ₽/шт</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="sportgrass" available="true">
+        <name>Спортивная искусственная трава SPORTFLOOR TURF — от 680 ₽/м²</name>
+        <url>https://azbuka46.ru/sportgrass</url>
+        <price>680</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://static.tildacdn.com/tild3432-3237-4334-a133-313963613032/SPORTFLOOR_TURF_6014.jpeg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Искусственная трава для футбола, тенниса, падела и мультиспорта. Высота ворса 12–60 мм.</description>
+        <param name="Минимальная цена">от 680 ₽/м²</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="sportex-kit-2" available="true">
+        <name>Набор SPORTEX для укладки до 2 м² — от 2 500 ₽</name>
+        <url>https://azbuka46.ru/sportex</url>
+        <price>2500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <picture>https://cdn.jsdelivr.net/gh/videojam46-beep/azbuka46-assets@main/img/sportex/sportex-kit-2m.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>DIY-комплект для самостоятельной укладки: крошка, ПУ-связующее, пигмент, перчатки, инструкция и видео.</description>
+        <param name="Минимальная цена">от 2 500 ₽</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="sportex-kit-3" available="true">
+        <name>Набор SPORTEX для укладки до 3 м² — от 4 200 ₽</name>
+        <url>https://azbuka46.ru/sportex</url>
+        <price>4200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <picture>https://cdn.jsdelivr.net/gh/videojam46-beep/azbuka46-assets@main/img/sportex/sportex-kit-3m.jpg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>DIY-комплект на площадь до 3 м²: крошка 2–4 мм, связующее, пигмент, перчатки, инструкция и видео.</description>
+        <param name="Минимальная цена">от 4 200 ₽</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="figures-3d" available="true">
+        <name>3D-фигуры из резиновой крошки — от 24 000 ₽</name>
+        <url>https://azbuka46.ru/3d-figures</url>
+        <price>24000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>7</categoryId>
+        <picture>https://static.tildacdn.com/tild3034-3262-4264-b237-613033303732/photo.jpeg</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Объёмные фигуры и геопластика для детских площадок. Более 50 фигур, 12 тематических коллекций.</description>
+        <param name="Минимальная цена">от 24 000 ₽</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="pigment" available="true">
+        <name>Цветной пигмент для смесей — от 350 ₽</name>
+        <url>https://azbuka46.ru/pigments</url>
+        <price>350</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>8</categoryId>
+        <picture>https://static.tildacdn.com/tild3238-6437-4032-b962-363236383835/_2.png</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Сухой светостойкий пигмент для резиновой крошки, бетона и гипса. 8 цветов, фасовки 500 г – 25 кг.</description>
+        <param name="Минимальная цена">от 350 ₽</param>
+        <param name="Город">Курск</param>
+      </offer>
+      <offer id="pu-glue" available="true">
+        <name>Полиуретановое связующее — от 1 400 ₽</name>
+        <url>https://azbuka46.ru/polyurethane-binder</url>
+        <price>1400</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>8</categoryId>
+        <picture>https://static.tildacdn.com/tild3233-6537-4635-a538-613765633061/__.png</picture>
+        <vendor>Азбука покрытий</vendor>
+        <description>Однокомпонентное ПУ-связующее для SBR и EPDM. Фасовки 2, 3, 5, 10 и 220 кг.</description>
+        <param name="Минимальная цена">от 1 400 ₽</param>
+        <param name="Город">Курск</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
